@@ -30,17 +30,28 @@ final class UserApiController extends AbstractController
 
         $user = $ur->find($id);
         // dd($user);
-   
+
         return $this->json($user);
     }
 
-     #[Route('/api/users/name/{name}', name: 'app_user_name')]
+    #[Route('/api/users/name/{name}', name: 'app_user_name')]
     public function username(UserRepository $ur, string $name): JsonResponse
     {
 
-        $user = $ur->findOneBy(["name"=>$name]);
+        $user = $ur->findOneBy(["name" => $name]);
         // dd($user);
-   
+
+        return $this->json($user);
+    }
+
+    #[Route('/api/users/me', name: 'app_user_me')]
+    public function me(UserRepository $ur): JsonResponse
+    {
+
+        $name = "Alice";
+        $user = $ur->findOneBy(["name" => $name]);
+
+
         return $this->json($user);
     }
 }

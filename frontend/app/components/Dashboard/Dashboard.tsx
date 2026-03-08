@@ -29,7 +29,7 @@ interface User {
 }
 async function getUser() {
 
-const res = await fetch("http://localhost:8000/api/users/id/2", {
+const res = await fetch("http://localhost:8000/api/users/me", {
     cache: "no-store",
   });
   if (!res.ok) throw new Error("Erreur lors du chargement de l'utilisateur");
