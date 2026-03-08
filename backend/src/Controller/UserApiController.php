@@ -48,10 +48,11 @@ final class UserApiController extends AbstractController
     public function me(UserRepository $ur): JsonResponse
     {
 
-        $name = "Alice";
+        $name = "user1";
         $user = $ur->findOneBy(["name" => $name]);
 
 
         return $this->json($user);
     }
+    
 }
