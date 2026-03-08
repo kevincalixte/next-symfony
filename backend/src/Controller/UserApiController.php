@@ -29,9 +29,9 @@ final class UserApiController extends AbstractController
     {
 
         $user = $ur->find($id);
-        dd($user);
+        // dd($user);
    
-        return $this->json($data);
+        return $this->json($user);
     }
 
      #[Route('/api/users/name/{name}', name: 'app_user_name')]
@@ -39,8 +39,8 @@ final class UserApiController extends AbstractController
     {
 
         $user = $ur->findOneBy(["name"=>$name]);
-        dd($user);
+        // dd($user);
    
-        return $this->json($data);
+        return $this->json($user);
     }
 }
